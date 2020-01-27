@@ -8,37 +8,61 @@ strucutre postman post requests like ```{ "user": { "email":"test@test.com, "pas
 
 this [tutorial](https://medium.com/@pamit/todo-list-building-a-react-app-with-rails-api-7a3027907665) is useful for meshing rails/react via internal api
 
+Profile.dev: 
+```
+web: PORT=4000 yarn --cwd todo-app start
+api: PORT=3000 bundle exec rails server
+```
+
+Add react app in app>javascript (index.js in packs)
+
+config react app with proxy for dev in package.json. add:
+```
+"proxy": "http://localhost:3000"
+```
+
 example api controller:
 
 ```ruby
-class TodosController < ApplicationController
+class VocabsController < ApplicationController
   def index
-    todos = Todo.order("created_at DESC")
-    render json: todos
+    vocabs = Vocab.order("created_at DESC")
+    render json: vocabs
+  end
+
+  def show
+    vocab = Vocab.find(params[:id])
+    render json: vocab
   end
 
   def create
-    todo = Todo.create(todo_param)
-    render json: todo
+    vocab = Vocab.new(vocab_params)
+    if vocab.save
+      render json: vocab
+    else
+      render json: vocab.errors
+    end
   end
 
   def update
-    todo = Todo.find(params[:id])
-    todo.update_attributes(todo_param)
-    render json: todo
+    vocab = Vocab.find(params[:id])
+    vocab.update_attributes!(vocab_params)
+    render json: vocab
   end
 
   def destroy
-    todo = Todo.find(params[:id])
-    todo.destroy
+    vocab = Vocab.find(params[:id])
+    vocab.destroy
     head :no_content, status: :ok
   end
-  
+
   private
-    def todo_param
-      params.require(:todo).permit(:title, :done)
-    end
+
+  def vocab_params
+    params.require(:vocab).permit(:french, :english, :starred)
+  end
 end
+
 ```
 
 
