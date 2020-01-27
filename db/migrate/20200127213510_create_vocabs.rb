@@ -3,7 +3,7 @@ class CreateVocabs < ActiveRecord::Migration[6.0]
     create_table :vocabs do |t|
       t.string :french
       t.string :english
-      t.boolean :starred
+      t.boolean :starred, default: false
 
       t.timestamps
     end
