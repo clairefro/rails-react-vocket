@@ -10,7 +10,7 @@ this [tutorial](https://medium.com/@pamit/todo-list-building-a-react-app-with-ra
 
 example api controller:
 
-```
+```ruby
 class TodosController < ApplicationController
   def index
     todos = Todo.order("created_at DESC")
