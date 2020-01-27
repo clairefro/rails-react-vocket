@@ -21,8 +21,6 @@ api: PORT=3000 bundle exec rails server
 ```
 > `--cwd` option means run server in specified directory (as opposed to root, where rails is run)
 
-`index.js` in (rails) app>javascript>packs
-
 config react app with proxy for dev in package.json. add:
 ```
 "proxy": "http://localhost:3000"
