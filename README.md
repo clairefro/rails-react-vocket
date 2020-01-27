@@ -1,5 +1,6 @@
-### notes to future self
+## notes to future self
 
+### prep
 install gem [rack-cors](https://github.com/cyu/rack-cors) for handling cross-origin res
 
 forgery protection in application controller to allow postman post requests (see this [SO](https://stackoverflow.com/questions/41619177/actioncontroller-invalidauthenticitytoken-in-apiv1userscontrollercreate))
@@ -8,13 +9,19 @@ strucutre postman post requests like ```{ "user": { "email":"test@test.com, "pas
 
 this [tutorial](https://medium.com/@pamit/todo-list-building-a-react-app-with-rails-api-7a3027907665) is useful for meshing rails/react via internal api
 
+### react app
+
+install in rails app root with 
+`create-react-app <REACT-APP-NAME>`
+
 Profile.dev: 
 ```
-web: PORT=4000 yarn --cwd todo-app start
+web: PORT=4000 yarn --cwd <REACT-APP-NAME> start
 api: PORT=3000 bundle exec rails server
 ```
+> `--cwd` option means run server in specified directory (as opposed to root, where rails is run)
 
-Add react app in app>javascript (index.js in packs)
+`index.js` in (rails) app>javascript>packs
 
 config react app with proxy for dev in package.json. add:
 ```
