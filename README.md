@@ -1,24 +1,7 @@
-# README
+### notes to future self
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+install gem [rack-cors](https://github.com/cyu/rack-cors) for handling cross-origin res
 
-Things you may want to cover:
+forgery protection in application controller to allow postman post requests (see this [SO](https://stackoverflow.com/questions/41619177/actioncontroller-invalidauthenticitytoken-in-apiv1userscontrollercreate))
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
