@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "destroying vocab..."
+Vocab.destroy_all
+puts "generating vocab..."
+Vocab.create!(french: 'sourcil', english: 'eyebrow')
+Vocab.create!(french: 'narine', english: 'nostril')
+Vocab.create!(french: 'merci', english: 'thank you')
+puts "done"
