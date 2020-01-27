@@ -28,6 +28,9 @@ config react app with proxy for dev in package.json. add:
 "proxy": "http://localhost:3000"
 ```
 
+run rails app/ react app (port 4000) simultaneous with heroku local via Profile:
+`heroku local -f Procfile.dev`
+
 example api controller:
 
 ```ruby
